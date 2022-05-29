@@ -25,17 +25,52 @@ function lakukanLooping(arrPegawai) {
   */
   let hasilLooping = null;
 
+  let hasilLoopingNamaLengkap = [];
+  
+  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
+    namaDepan = dataYangAkanDilooping[i].namaDepan;
+    namaBelakang = dataYangAkanDilooping[i].namaBelakang;
+    namaLengkap = namaDepan + " " + namaBelakang;
+    hasilLoopingNamaLengkap.push(namaLengkap);
+  }
+  
+  hasilLooping = hasilLoopingNamaLengkap;
+
   /*
     TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
       yang berisi jumlah pria dari masing masing pegawai
   */
   let jumlahPria = null;
 
+  let jumlahPriaTotal = [];
+
+  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
+    jenisKelamin = dataYangAkanDilooping[i].jenisKelamin;
+    if (jenisKelamin == 'M') {
+      jumlah = jenisKelamin.length;
+      jumlahPriaTotal.push(jumlah);
+    }
+  }
+
+  jumlahPria = jumlahPriaTotal.length;
+
   /*
     TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
       yang berisi jumlah wanita dari masing masing pegawai
   */
   let jumlahWanita = null;
+
+  let jumlahWanitaTotal = [];
+
+  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
+    jenisKelamin = dataYangAkanDilooping[i].jenisKelamin;
+    if (jenisKelamin == 'F') {
+      jumlah = jenisKelamin.length;
+      jumlahWanitaTotal.push(jumlah);
+    }
+  }
+
+  jumlahWanita = jumlahWanitaTotal.length;
 
   /*
     TODO 4: Buatlah sebuah variabel bernama "komentar"
@@ -49,6 +84,19 @@ function lakukanLooping(arrPegawai) {
         "Jumlah Pria dan Wanita berimbang"
   */
   let komentar = null;
+
+  if (jumlahPria > jumlahWanita) {
+    console.log("Jumlah Pria lebih banyak dari Wanita");
+    komentar = "Jumlah Pria lebih banyak dari Wanita";
+  }
+  if (jumlahPria < jumlahWanita) {
+    console.log("Jumlah Wanita lebih banyak dari Pria");
+    komentar = "Jumlah Wanita lebih banyak dari Pria";
+  } 
+  if (jumlahPria == jumlahWanita) {
+    console.log("Jumlah Pria dan Wanita berimbang");
+    komentar = "Jumlah Pria dan Wanita berimbang";
+  }
 
   // ! JANGAN DIMODIFIKASI
   return {
